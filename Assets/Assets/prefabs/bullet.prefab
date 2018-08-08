@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 61484570191568096}
   m_Layer: 0
   m_Name: bullet
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &61484570191568096
 BoxCollider2D:
@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   dir: {x: 0, y: 0, z: 0, w: 0}
+  damage: 25
 --- !u!212 &212465638476534684
 SpriteRenderer:
   m_ObjectHideFlags: 1
