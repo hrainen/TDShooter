@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
     public float CurrentHealth { get; set; }
@@ -9,6 +10,9 @@ public class PlayerHealth : MonoBehaviour {
 
     public Slider healthbar;
     public Text healthValueText;
+
+    public GameObject GOCanvas;
+    public GameObject game;
 
     // Use this for initialization
     void Start () {
@@ -53,6 +57,12 @@ public class PlayerHealth : MonoBehaviour {
     void Die()
     {
         CurrentHealth = 0;
+        
+        //SceneManager.LoadScene("MainMenu"); 
         Debug.Log("Player is dead! X X");
+
+        game.SetActive(false);
+        GOCanvas.SetActive(true);
+
     }
 }
