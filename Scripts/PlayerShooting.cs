@@ -46,7 +46,10 @@ public class PlayerShooting : MonoBehaviour {
 
         float rot_z = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         //rot_z - 90w
+        //var newBullet = Instantiate(bullet, transform.position, Quaternion.Euler(0f, 0f, rot_z - 90));
+
         var newBullet = Instantiate(bullet, transform.position, Quaternion.Euler(0f, 0f, rot_z - 90));
+
         //newBullet.GetComponent<BulletMovement>().dir = Quaternion.Euler(0f, 0f, rot_z - 90);
         newBullet.GetComponent<Rigidbody2D>().AddForce(dir * bulletSpeed, ForceMode2D.Impulse);
 

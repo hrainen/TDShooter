@@ -24,9 +24,10 @@ public class BulletMovement : MonoBehaviour {
         if (enemy != null)
         {
             enemy.health -= damage;
+            Destroy(this.gameObject);
         }
 
-        Destroy(this.gameObject);
+        
         
     }
 }
