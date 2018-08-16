@@ -19,7 +19,6 @@ public class enemyControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //Debug.Log(health);
         angle += rotateSpeed * Time.deltaTime;
         var offset = new Vector3(Mathf.Sin(angle) * radius , Mathf.Cos(angle) * radius, 0);
         transform.position = center + offset;

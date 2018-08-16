@@ -9,6 +9,7 @@ public class PlayerShooting : MonoBehaviour {
     public bool isFiring = false;
     public bool CanFire = true;
     public Transform fireLocation;
+    public AudioSource colt_1911;
 
 	// Use this for initialization
 	void Start () {
@@ -38,6 +39,9 @@ public class PlayerShooting : MonoBehaviour {
     public IEnumerator FireBullet(float timeBetween)
     {
         //Debug.Log(timeBetween);
+
+        //play sound of gun firing here:
+        colt_1911.Play();
 
         Vector2 dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         dir.Normalize();
