@@ -5,13 +5,15 @@ using UnityEngine;
 public class BulletMovement : MonoBehaviour {
     public float speed = 3f;
     public Quaternion dir;
-    public float damage = 25;
+    public float damage;
+    public bool hasCollided;
 
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        damage = -25f;
+        hasCollided = false;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -21,9 +23,15 @@ public class BulletMovement : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D col)
     {
         var enemy = col.gameObject.GetComponent<enemyControl>();
-        if (enemy != null)
+
+        if (enemy != null && !hasCollided)
         {
-            enemy.health -= damage;
+            enemy.health += damage;
+            hasCollided = true;
+        }
+
+        if (col.tag != "Player")
+        {
             Destroy(this.gameObject);
         }
 

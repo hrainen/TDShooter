@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour {
     public GameObject bullet;
-    public float bulletSpeed = .1f;
+    public float bulletSpeed = 1f;
     public float timeBetweenShots;
     public bool isFiring = false;
     public bool CanFire = true;
@@ -13,7 +13,7 @@ public class PlayerShooting : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        timeBetweenShots = .1f;
+        //timeBetweenShots = .1f;
     }
 	
 	// Update is called once per frame
